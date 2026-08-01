@@ -9,9 +9,28 @@ import SwiftUI
 
 @main
 struct watchdogApp: App {
+    @NSApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
+    @StateObject private var store = UsageStore.live()
+    @StateObject private var network = NetworkStatus()
+
     var body: some Scene {
-        WindowGroup {
-            ContentView()
+        MenuBarExtra {
+            MenuContentView(store: store, network: network)
+        } label: {
+            if store.overLimit {
+                Image(systemName: "exclamationmark.triangle.fill")
+            } else {
+                Image("MenuBarIcon")
+            }
         }
+        .menuBarExtraStyle(.window)
+    }
+}
+
+final class AppDelegate: NSObject, NSApplicationDelegate {
+    func applicationDidFinishLaunching(_ notification: Notification) {
+        LoginItem.registerOnFirstRun()
+        // Menubar-only agent app: no Dock icon.
+        NSApp.setActivationPolicy(.accessory)
     }
 }
