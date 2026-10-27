@@ -24,10 +24,10 @@ sandbox silently breaks monitoring, and the app is not App Store-distributable).
   header badge, with a notification when a hotspot connects.
 - Helper processes (e.g. "Google Chrome Helper") are folded into their parent app via
   their executable path, so usage groups the way you'd expect.
-- The checkbox per app maintains a block list shared with the (optional) filter
-  extension — see below; without the extension it is bookkeeping only.
 
 ## Build & run
+
+Requires macOS 14 or later to run, and Xcode 26 or later to build.
 
 Open `watchdog.xcodeproj` in Xcode and run the `watchdog` scheme, or:
 
@@ -37,7 +37,7 @@ xcodebuild -project watchdog.xcodeproj -scheme watchdog -configuration Debug bui
 
 ## Current limitations
 
-- **Monitoring only.** The app observes traffic; it cannot block anything until the
+- **Monitoring only.** The app observes traffic; it has no blocking controls until the
   filter extension is wired up (see below).
 - Polling `nettop` is sampled, not exact — connections that open and close entirely
   between two polls are missed, and byte counts are approximate.
@@ -66,3 +66,13 @@ Regenerate with `swift Design/IconGen.swift color 1024 out.png` (app icon) or
 /Applications. On first launch Watchdog registers itself as a login item
 (toggle "Start at Login" in the ⋯ menu) and collects usage continuously;
 history is kept for a year in hourly buckets.
+
+## Privacy
+
+All data stays on your Mac. Watchdog writes per-app totals to
+`~/Library/Application Support/Watchdog/usage.json` and nothing else. It opens no network
+connections of its own and has no analytics or crash reporting.
+
+## License
+
+MIT. See [LICENSE](LICENSE).

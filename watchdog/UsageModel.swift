@@ -59,7 +59,6 @@ struct AppUsage: Identifiable, Hashable {
     var icon: NSImage?
     var bytesIn: Int64
     var bytesOut: Int64
-    var isBlocked: Bool = false
 
     var totalBytes: Int64 { bytesIn + bytesOut }
 }
@@ -79,9 +78,6 @@ final class UsageStore: ObservableObject {
     @Published var sortMode: SortMode = .usage
     @Published private(set) var apps: [AppUsage] = []
 
-    /// Shared with the (optional) content-filter extension — see WatchdogFilterExtension/.
-    static let blockDefaults = UserDefaults(suiteName: "group.watchdog.shared") ?? .standard
-    private static let blockedKey = "blockedAppIDs"
     private static let dailyLimitKey = "dailyLimitBytes"
     private static let limitNotifiedDayKey = "dailyLimitNotifiedDay"
 
@@ -115,14 +111,12 @@ final class UsageStore: ObservableObject {
     private var hasBaselineTick = false
     private var dayLog: DayLog
     private let resolver = AppResolver()
-    private var blocked: Set<String>
     private var samplerTask: Task<Void, Never>?
     private var ticks = 0
     private var todayKey = DayLog.dayKey(for: Date())
 
     /// Tests and previews inject rows directly; the sampler only runs via `start()`.
     init(apps: [AppUsage] = [], dayLog: DayLog = DayLog()) {
-        self.blocked = Set(Self.blockDefaults.stringArray(forKey: Self.blockedKey) ?? [])
         self.apps = apps
         self.dayLog = dayLog
         self.dailyLimitBytes = Int64(UserDefaults.standard.integer(forKey: Self.dailyLimitKey))
@@ -279,8 +273,7 @@ final class UsageStore: ObservableObject {
         }
         apps = rows.map { id, tally in
             AppUsage(id: id, name: tally.name, icon: resolver.icon(forAppID: id),
-                     bytesIn: tally.bytesIn, bytesOut: tally.bytesOut,
-                     isBlocked: blocked.contains(id))
+                     bytesIn: tally.bytesIn, bytesOut: tally.bytesOut)
         }
     }
 
@@ -342,12 +335,6 @@ final class UsageStore: ObservableObject {
             AppUsage(id: id, name: entry.name, icon: resolver.icon(forAppID: id),
                      bytesIn: entry.bytesIn, bytesOut: entry.bytesOut)
         }
-    }
-
-    func toggleBlock(_ id: String) {
-        if !blocked.insert(id).inserted { blocked.remove(id) }
-        Self.blockDefaults.set(Array(blocked).sorted(), forKey: Self.blockedKey)
-        rebuild()
     }
 
     func resetStatistics() {

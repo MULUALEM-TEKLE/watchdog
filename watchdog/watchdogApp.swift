@@ -30,7 +30,5 @@ struct watchdogApp: App {
 final class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
         LoginItem.registerOnFirstRun()
-        // Menubar-only agent app: no Dock icon.
-        NSApp.setActivationPolicy(.accessory)
     }
 }

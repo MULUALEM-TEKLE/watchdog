@@ -14,19 +14,11 @@
 			remoteGlobalIDString = 537B6298300FF4230029B163;
 			remoteInfo = watchdog;
 		};
-		537B62B1300FF4260029B163 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 537B6291300FF4230029B163 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 537B6298300FF4230029B163;
-			remoteInfo = watchdog;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		537B6299300FF4230029B163 /* watchdog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = watchdog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		537B62A6300FF4260029B163 /* watchdogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = watchdogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		537B62B0300FF4260029B163 /* watchdogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = watchdogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -38,11 +30,6 @@
 		537B62A9300FF4260029B163 /* watchdogTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = watchdogTests;
-			sourceTree = "<group>";
-		};
-		537B62B3300FF4260029B163 /* watchdogUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = watchdogUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -62,13 +49,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		537B62AD300FF4260029B163 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -77,7 +57,6 @@
 			children = (
 				537B629B300FF4230029B163 /* watchdog */,
 				537B62A9300FF4260029B163 /* watchdogTests */,
-				537B62B3300FF4260029B163 /* watchdogUITests */,
 				537B629A300FF4230029B163 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -87,7 +66,6 @@
 			children = (
 				537B6299300FF4230029B163 /* watchdog.app */,
 				537B62A6300FF4260029B163 /* watchdogTests.xctest */,
-				537B62B0300FF4260029B163 /* watchdogUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,29 +118,6 @@
 			productReference = 537B62A6300FF4260029B163 /* watchdogTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		537B62AF300FF4260029B163 /* watchdogUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 537B62C0300FF4260029B163 /* Build configuration list for PBXNativeTarget "watchdogUITests" */;
-			buildPhases = (
-				537B62AC300FF4260029B163 /* Sources */,
-				537B62AD300FF4260029B163 /* Frameworks */,
-				537B62AE300FF4260029B163 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				537B62B2300FF4260029B163 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				537B62B3300FF4260029B163 /* watchdogUITests */,
-			);
-			name = watchdogUITests;
-			packageProductDependencies = (
-			);
-			productName = watchdogUITests;
-			productReference = 537B62B0300FF4260029B163 /* watchdogUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -177,10 +132,6 @@
 						CreatedOnToolsVersion = 26.6;
 					};
 					537B62A5300FF4260029B163 = {
-						CreatedOnToolsVersion = 26.6;
-						TestTargetID = 537B6298300FF4230029B163;
-					};
-					537B62AF300FF4260029B163 = {
 						CreatedOnToolsVersion = 26.6;
 						TestTargetID = 537B6298300FF4230029B163;
 					};
@@ -202,7 +153,6 @@
 			targets = (
 				537B6298300FF4230029B163 /* watchdog */,
 				537B62A5300FF4260029B163 /* watchdogTests */,
-				537B62AF300FF4260029B163 /* watchdogUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -216,13 +166,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		537B62A4300FF4260029B163 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		537B62AE300FF4260029B163 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -246,13 +189,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		537B62AC300FF4260029B163 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -260,11 +196,6 @@
 			isa = PBXTargetDependency;
 			target = 537B6298300FF4230029B163 /* watchdog */;
 			targetProxy = 537B62A7300FF4260029B163 /* PBXContainerItemProxy */;
-		};
-		537B62B2300FF4260029B163 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 537B6298300FF4230029B163 /* watchdog */;
-			targetProxy = 537B62B1300FF4260029B163 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -322,7 +253,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 26.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -379,7 +310,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 26.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -396,11 +327,14 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Watchdog;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2026 Mulualem Tekle";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -427,11 +361,14 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Watchdog;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2026 Mulualem Tekle";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -456,7 +393,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 26.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = xar.watchdogTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -476,7 +413,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 26.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = xar.watchdogTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -486,42 +423,6 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/watchdog.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/watchdog";
-			};
-			name = Release;
-		};
-		537B62C1300FF4260029B163 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = xar.watchdogUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = watchdog;
-			};
-			name = Debug;
-		};
-		537B62C2300FF4260029B163 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = xar.watchdogUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = watchdog;
 			};
 			name = Release;
 		};
@@ -551,15 +452,6 @@
 			buildConfigurations = (
 				537B62BE300FF4260029B163 /* Debug */,
 				537B62BF300FF4260029B163 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		537B62C0300FF4260029B163 /* Build configuration list for PBXNativeTarget "watchdogUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				537B62C1300FF4260029B163 /* Debug */,
-				537B62C2300FF4260029B163 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

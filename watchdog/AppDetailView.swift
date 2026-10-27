@@ -70,7 +70,6 @@ struct AppDetailView: View {
                     }
                 }
                 .frame(width: 56, height: 56)
-                .opacity(app.isBlocked ? 0.4 : 1)
 
                 Text(app.name)
                     .font(.headline)
@@ -97,25 +96,6 @@ struct AppDetailView: View {
                     .fill(.quaternary.opacity(0.4))
             )
             .padding(.horizontal, 16)
-
-            Toggle(isOn: Binding(
-                get: { app.isBlocked },
-                set: { _ in store.toggleBlock(app.id) }
-            )) {
-                VStack(alignment: .leading, spacing: 1) {
-                    Text("Block network access")
-                        .font(.system(size: 13))
-                    Text(app.id)
-                        .font(.caption2)
-                        .foregroundStyle(.tertiary)
-                        .lineLimit(1)
-                }
-            }
-            .toggleStyle(.switch)
-            .controlSize(.small)
-            .tint(.red)
-            .padding(.horizontal, 16)
-            .padding(.top, 16)
 
             hostsSection(for: app)
 

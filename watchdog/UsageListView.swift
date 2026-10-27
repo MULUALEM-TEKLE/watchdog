@@ -47,8 +47,7 @@ struct UsageListView: View {
                 UsageRowView(
                     app: app,
                     maxBytes: store.maxBytes,
-                    onSelect: { onSelect(app.id) },
-                    onToggleBlock: { store.toggleBlock(app.id) }
+                    onSelect: { onSelect(app.id) }
                 )
             }
         }
@@ -182,7 +181,6 @@ struct UsageRowView: View {
     let app: AppUsage
     let maxBytes: Int64
     let onSelect: () -> Void
-    let onToggleBlock: () -> Void
 
     @State private var hovering = false
 
@@ -193,8 +191,6 @@ struct UsageRowView: View {
 
     var body: some View {
         HStack(spacing: 10) {
-            blockToggle
-
             Group {
                 if let icon = app.icon {
                     Image(nsImage: icon)
@@ -211,13 +207,11 @@ struct UsageRowView: View {
                 }
             }
             .frame(width: 26, height: 26)
-            .opacity(app.isBlocked ? 0.4 : 1)
 
             VStack(alignment: .leading, spacing: 4) {
                 HStack(alignment: .firstTextBaseline) {
                     Text(app.name)
                         .font(.system(size: 13, weight: .medium))
-                        .foregroundStyle(app.isBlocked ? AnyShapeStyle(.secondary) : AnyShapeStyle(.primary))
                         .lineLimit(1)
 
                     Spacer(minLength: 8)
@@ -247,23 +241,13 @@ struct UsageRowView: View {
         .onTapGesture(perform: onSelect)
     }
 
-    private var blockToggle: some View {
-        Button(action: onToggleBlock) {
-            Image(systemName: app.isBlocked ? "square" : "checkmark.square.fill")
-                .font(.system(size: 14))
-                .foregroundStyle(app.isBlocked ? AnyShapeStyle(.tertiary) : AnyShapeStyle(Color.accentColor))
-        }
-        .buttonStyle(.plain)
-        .help(app.isBlocked ? "Allow network access" : "Block network access")
-    }
-
     private var usageBar: some View {
         GeometryReader { geo in
             ZStack(alignment: .leading) {
                 Capsule()
                     .fill(.quaternary.opacity(0.6))
                 Capsule()
-                    .fill(app.isBlocked ? AnyShapeStyle(.tertiary) : AnyShapeStyle(Color.accentColor))
+                    .fill(Color.accentColor)
                     .frame(width: app.totalBytes > 0 ? max(4, geo.size.width * fraction) : 0)
             }
         }

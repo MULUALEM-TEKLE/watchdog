@@ -66,6 +66,10 @@ preferences in `FilterManager` on every toggle) and read it in the provider, or 
      App Groups) and enable it on both bundle IDs.
 
 5. **Add the app-side helper**
+   - Add a block toggle to the app UI that writes the blocked bundle IDs as a string
+     array to the `blockedAppIDs` key of the `group.watchdog.shared` suite (the app has
+     no block controls today; they were removed because they had no effect without
+     the extension).
    - Drag `WatchdogFilterExtension/FilterManager.swift` into the **app** target.
    - Set `FilterManager.extensionBundleID` to the extension target's actual bundle ID.
    - Call `activateExtension()` from your UI (e.g. an "Enable blocking" button);
