@@ -10,7 +10,7 @@
 
 ## Global Constraints
 
-- Repo: `/Users/xar/developer/x-code-dev/watchdog`; Xcode project `watchdog.xcodeproj`, scheme `watchdog`.
+- Repo: `<repo>`; Xcode project `watchdog.xcodeproj`, scheme `watchdog`.
 - Build: `xcodebuild -project watchdog.xcodeproj -scheme watchdog -configuration Debug build 2>&1 | tail -5` → must end `** BUILD SUCCEEDED **`.
 - Tests: `xcodebuild -project watchdog.xcodeproj -scheme watchdog -destination "platform=macOS" -only-testing:watchdogTests test 2>&1 | tail -30` → must end with all tests passed / `** TEST SUCCEEDED **`.
 - Folder-synchronized groups: any `.swift` file created in `watchdog/` auto-compiles into the app target; files in `watchdogTests/` into the unit-test target. Files in `WatchdogFilterExtension/` compile into NOTHING until a human wires the extension target (Task H2) — subagents must never add that folder to a target.
@@ -35,7 +35,7 @@ Run: build + tests (Global Constraints commands). Expected: BUILD SUCCEEDED, TES
 - [ ] **Step 2: Commit everything currently uncommitted**
 
 ```bash
-cd /Users/xar/developer/x-code-dev/watchdog
+cd <repo>
 git add -A
 git commit -m "chore: baseline before App Store sandbox migration (nettop architecture, v1)"
 ```

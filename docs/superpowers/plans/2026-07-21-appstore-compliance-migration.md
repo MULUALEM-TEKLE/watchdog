@@ -78,7 +78,7 @@ These require a **paid Apple Developer Program membership** and the Apple Develo
 - [ ] **Step 1: Create a migration branch**
 
 ```bash
-cd /Users/xar/developer/x-code-dev/watchdog
+cd <repo>
 git checkout -b appstore-sandbox-migration
 ```
 
