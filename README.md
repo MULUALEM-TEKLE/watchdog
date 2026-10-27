@@ -1,7 +1,10 @@
 # Watchdog
 
-A macOS menu-bar-style utility for keeping an eye on which apps are using the network —
-and, once wired up, blocking the ones you don't want talking to the internet.
+Watchdog sits in your menu bar and shows which apps use your Wi-Fi data, right now and
+over the day, week and month. Set a daily limit and get one alert when you reach it. It
+warns you when you join a hotspot. Everything stays on your Mac. Open source, MIT.
+
+![Watchdog popover: per-app Wi-Fi usage for today, and the detail view for one app](docs/images/readme-hero.png)
 
 ## How monitoring works
 

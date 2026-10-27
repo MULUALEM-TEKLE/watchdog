@@ -1,6 +1,6 @@
 # Handoff
 
-Updated: 2026-10-27 09:30, commit be1acfb+uncommitted, session release-cleanup
+Updated: 2026-10-27 10:00, commit (see git log), session release-cleanup
 
 ## Goal
 
@@ -12,16 +12,18 @@ Network Extension entitlement). That work is not started.
 
 ## In flight
 
-- main / release-cleanup: repo hygiene, dead block UI removed, hardened
-  runtime, deployment target 14.0, LICENSE, README. Next: commit, push.
+- main / launch: repo is public (2026-10-27). Launch kit in `_/campaign/`
+  (plan, press kit) and `_/social/2026-10-27-launch/` (hero images, post.md).
+  Website in `../watchdog.site` deploying to https://watchdog.mulualem.com
+  (worker agent, Temps on the Hostinger VPS). Next: notarized release.
 
 ## Blocked / waiting
 
 - Notarized releases need a Developer ID certificate on the owner's own paid
   team. The machine has only an "Apple Development" and a third-party "Apple
   Distribution" identity.
-- Repo is private. Making it public and the license choice (MIT assumed) are
-  the owner's call.
+- GitHub social preview image must be uploaded by hand (Settings → Social
+  preview): `_/social/2026-10-27-launch/og-1200x630.png`.
 
 ## Decisions (last 2 weeks)
 
@@ -35,12 +37,13 @@ Network Extension entitlement). That work is not started.
 
 ## Next
 
-- Owner: decide open source vs. App Store (see session report).
+- Owner: notarized release (Developer ID), then Show HN / Reddit / Product
+  Hunt per `_/campaign/launch-campaign.md`.
 - Owner: enroll own paid team for Developer ID, then add a notarize + release
   script and a GitHub Actions test workflow.
 - Consider asking before auto-registering the login item on first run
   (App Store guideline 2.4.5 blocker; UX choice for direct distribution).
-- Pick a reverse-DNS bundle ID before the first public release.
+- Rename bundle ID to `com.mulualem.watchdog` before the first tagged release.
 
 ## Do not touch
 
