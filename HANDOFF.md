@@ -14,8 +14,9 @@ Network Extension entitlement). That work is not started.
 
 - main / launch: repo is public (2026-10-27). Launch kit in `_/campaign/`
   (plan, press kit) and `_/social/2026-10-27-launch/` (hero images, post.md).
-  Website in `../watchdog.site` deploying to https://watchdog.mulualem.com
-  (worker agent, Temps on the Hostinger VPS). Next: notarized release.
+  Website live at https://watchdog.mulualem.com (repo `../watchdog.site`,
+  Temps project 10, manual static deploy: push does not redeploy). Next:
+  notarized release.
 
 ## Blocked / waiting
 
