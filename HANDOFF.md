@@ -1,6 +1,6 @@
 # Handoff
 
-Updated: 2026-10-27 10:00, commit (see git log), session release-cleanup
+Updated: 2026-10-29 13:10, commit (see git log), session launch-videos
 
 ## Goal
 
@@ -15,8 +15,10 @@ Network Extension entitlement). That work is not started.
 - main / launch: repo is public (2026-10-27). Launch kit in `_/campaign/`
   (plan, press kit) and `_/social/2026-10-27-launch/` (hero images, post.md).
   Website live at https://watchdog.mulualem.com (repo `../watchdog.site`,
-  Temps project 10, manual static deploy: push does not redeploy). Next:
-  notarized release.
+  Temps project 10, manual static deploy: push does not redeploy). X launch
+  videos + thread copy in `_/social/2026-10-29-x-launch-videos/`. A real
+  menu bar recording needs the owner's clicks:
+  `_/social/2026-10-27-launch/raw/record-demo.sh`. Next: notarized release.
 
 ## Blocked / waiting
 
